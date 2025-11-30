@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Gürdal Emlak - Güvenilir gayrimenkul danışmanlığı ve satış hizmetleri">
+    <meta name="keywords" content="emlak, gayrimenkul, ev, arsa, kiralık, satılık">
+    <title>Gürdal Emlak - Ana Sayfa</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar container">
+            <div class="navbar__logo">
+                <img src="assets/images/GÜRDAL_TEXT.png" alt="Gürdal Emlak Logo" class="logo">
+            </div>
+            <button class="navbar__toggle" aria-label="Menüyü Aç/Kapat" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="navbar__menu" id="navMenu">
+                <li><a href="#anasayfa" class="navbar__link active">Ana Sayfa</a></li>
+                <li><a href="#ilanlar" class="navbar__link">İlanlar</a></li>
+                <li><a href="#hakkimizda" class="navbar__link">Hakkımızda</a></li>
+                <li><a href="#hizmetler" class="navbar__link">Hizmetlerimiz</a></li>
+                <li><a href="#iletisim" class="navbar__link">İletişim</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="anasayfa">
+        <div class="hero__overlay"></div>
+        <div class="hero__content container">
+            <img src="assets/images/GÜRDAL_white.png" alt="Gürdal Emlak" class="hero__logo">
+            <h1 class="hero__title">Hayalinizdeki Evi Birlikte Bulalım</h1>
+            <p class="hero__subtitle">Güvenilir gayrimenkul danışmanlığı ile yanınızdayız</p>
+            <div class="hero__search">
+                <div class="search-box">
+                    <select class="search-box__select" id="propertyType">
+                        <option value="">İlan Tipi</option>
+                        <option value="satilik">Satılık</option>
+                        <option value="kiralik">Kiralık</option>
+                    </select>
+                    <select class="search-box__select" id="propertyCategory">
+                        <option value="">Emlak Tipi</option>
+                        <option value="konut">Konut</option>
+                        <option value="isyeri">İşyeri</option>
+                        <option value="arsa">Arsa</option>
+                    </select>
+                    <select class="search-box__select" id="city">
+                        <option value="">Şehir</option>
+                        <option value="antalya">Antalya</option>
+                        <option value="isparta">Isparta</option>
+                    </select>
+                    <select class="search-box__select" id="district">
+                        <option value="">İlçe</option>
+                    </select>
+                    <button class="search-box__button" id="searchBtn">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M9 17C13.4183 17 17 13.4183 17 9C17 4.58172 13.4183 1 9 1C4.58172 1 1 4.58172 1 9C1 13.4183 4.58172 17 9 17Z" stroke="white" stroke-width="2"/>
+                            <path d="M19 19L14.65 14.65" stroke="white" stroke-width="2"/>
+                        </svg>
+                        Ara
+                    </button>
+                    <button class="search-box__button search-box__button--reset" id="resetBtn">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M17.65 6.35C16.2 2.92 12.71 1 9 1 4.58 1 1 4.58 1 9s3.58 8 8 8c3.73 0 6.84-2.55 7.73-6" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                            <path d="M13 6h5v5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        Sıfırla
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Properties -->
+    <section class="section properties" id="ilanlar">
+        <div class="container">
+            <div class="section__header">
+                <h2 class="section__title">Öne Çıkan İlanlar</h2>
+                <p class="section__subtitle">En güncel ve popüler gayrimenkul ilanlarımız</p>
+            </div>
+            <div class="properties__filters">
+                <button class="filter-btn active" data-filter="all">Tümü</button>
+                <button class="filter-btn" data-filter="satilik">Satılık</button>
+                <button class="filter-btn" data-filter="kiralik">Kiralık</button>
+            </div>
+            <div class="properties__grid" id="propertiesGrid">
+                <!-- Properties will be loaded dynamically -->
+            </div>
+            <div class="properties__loading" id="loadingSpinner">
+                <div class="spinner"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section about" id="hakkimizda">
+        <div class="container">
+            <div class="about__content">
+                <div class="about__text">
+                    <h2 class="section__title">Hakkımızda</h2>
+                    <p class="about__description">
+                        Gürdal Emlak olarak, yılların deneyimi ve güvenilir hizmet anlayışımızla 
+                        gayrimenkul sektöründe fark yaratıyoruz. Müşteri memnuniyetini ön planda tutarak, 
+                        hayalinizdeki evi bulmanızda size yardımcı oluyoruz.
+                    </p>
+                    <ul class="about__features">
+                        <li class="feature">
+                            <span class="feature__icon">✓</span>
+                            <span class="feature__text">Profesyonel Danışmanlık</span>
+                        </li>
+                        <li class="feature">
+                            <span class="feature__icon">✓</span>
+                            <span class="feature__text">Güvenilir Hizmet</span>
+                        </li>
+                        <li class="feature">
+                            <span class="feature__icon">✓</span>
+                            <span class="feature__text">Geniş İlan Portföyü</span>
+                        </li>
+                        <li class="feature">
+                            <span class="feature__icon">✓</span>
+                            <span class="feature__text">Hızlı ve Kolay İşlemler</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="about__stats">
+                    <div class="stat-card">
+                        <h3 class="stat-card__number" data-count="1500">0</h3>
+                        <p class="stat-card__label">Mutlu Müşteri</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3 class="stat-card__number" data-count="500">0</h3>
+                        <p class="stat-card__label">Satılan Emlak</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3 class="stat-card__number" data-count="250">0</h3>
+                        <p class="stat-card__label">Aktif İlan</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="section services" id="hizmetler">
+        <div class="container">
+            <div class="section__header">
+                <h2 class="section__title">Hizmetlerimiz</h2>
+                <p class="section__subtitle">Size özel çözümler sunuyoruz</p>
+            </div>
+            <div class="services__grid">
+                <div class="service-card">
+                    <div class="service-card__icon">🏠</div>
+                    <h3 class="service-card__title">Satış Danışmanlığı</h3>
+                    <p class="service-card__description">
+                        Gayrimenkulünüzü en iyi şekilde değerlendirip, hızlı satış için profesyonel destek sunuyoruz.
+                    </p>
+                </div>
+                <div class="service-card">
+                    <div class="service-card__icon">🔑</div>
+                    <h3 class="service-card__title">Kiralama Hizmetleri</h3>
+                    <p class="service-card__description">
+                        Ev veya işyeri kiralamak için güvenilir kiracı bulma ve sözleşme süreçlerini yönetiyoruz.
+                    </p>
+                </div>
+                <div class="service-card">
+                    <div class="service-card__icon">📊</div>
+                    <h3 class="service-card__title">Emlak Değerleme</h3>
+                    <p class="service-card__description">
+                        Gayrimenkulünüzün gerçek piyasa değerini belirlemek için detaylı analiz yapıyoruz.
+                    </p>
+                </div>
+                <div class="service-card">
+                    <div class="service-card__icon">🤝</div>
+                    <h3 class="service-card__title">Yatırım Danışmanlığı</h3>
+                    <p class="service-card__description">
+                        Gayrimenkul yatırımlarınızda en karlı fırsatları değerlendirmenize yardımcı oluyoruz.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section contact" id="iletisim">
+        <div class="container">
+            <div class="section__header">
+                <h2 class="section__title">İletişim</h2>
+                <p class="section__subtitle">Bizimle iletişime geçin</p>
+            </div>
+            <div class="contact__content">
+                <div class="contact__info">
+                    <div class="contact-item">
+                        <div class="contact-item__icon">📍</div>
+                        <div class="contact-item__content">
+                            <h4 class="contact-item__title">Adres</h4>
+                            <p class="contact-item__text">Örnek Mahallesi, Emlak Caddesi No:123<br>İstanbul, Türkiye</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-item__icon">📞</div>
+                        <div class="contact-item__content">
+                            <h4 class="contact-item__title">Telefon</h4>
+                            <p class="contact-item__text">+90 (212) 123 45 67</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-item__icon">✉️</div>
+                        <div class="contact-item__content">
+                            <h4 class="contact-item__title">E-posta</h4>
+                            <p class="contact-item__text">info@gurdalemlak.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-item__icon">⏰</div>
+                        <div class="contact-item__content">
+                            <h4 class="contact-item__title">Çalışma Saatleri</h4>
+                            <p class="contact-item__text">Pazartesi - Cumartesi: 09:00 - 18:00</p>
+                        </div>
+                    </div>
+                </div>
+                <form class="contact__form" id="contactForm">
+                    <div class="form-group">
+                        <label for="name" class="form-label">Ad Soyad</label>
+                        <input type="text" id="name" class="form-input" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email" class="form-label">E-posta</label>
+                        <input type="email" id="email" class="form-input" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone" class="form-label">Telefon</label>
+                        <input type="tel" id="phone" class="form-input" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message" class="form-label">Mesajınız</label>
+                        <textarea id="message" class="form-textarea" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="form-button">Gönder</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__section">
+                    <img src="assets/images/GÜRDAL.png" alt="Gürdal Emlak" class="footer__logo">
+                    <h3 class="footer__brand">Gürdal Emlak</h3>
+                    <p class="footer__text">
+                        Güvenilir gayrimenkul danışmanlığı ile hayalinizdeki evi bulmanıza yardımcı oluyoruz.
+                    </p>
+                </div>
+                <div class="footer__section">
+                    <h4 class="footer__title">Hızlı Linkler</h4>
+                    <ul class="footer__links">
+                        <li><a href="#anasayfa">Ana Sayfa</a></li>
+                        <li><a href="#hakkimizda">Hakkımızda</a></li>
+                        <li><a href="#ilanlar">İlanlar</a></li>
+                        <li><a href="#hizmetler">Hizmetlerimiz</a></li>
+                    </ul>
+                </div>
+                <div class="footer__section">
+                    <h4 class="footer__title">İletişim</h4>
+                    <ul class="footer__links">
+                        <li>📞 +90 (212) 123 45 67</li>
+                        <li>✉️ info@gurdalemlak.com</li>
+                        <li>📍 İstanbul, Türkiye</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p>&copy; 2025 Gürdal Emlak. Tüm hakları saklıdır.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/config.js"></script>
+    <script src="js/utils/validator.js"></script>
+    <script src="js/utils/animator.js"></script>
+    <script src="js/services/PropertyService.js"></script>
+    <script src="js/components/PropertyCard.js"></script>
+    <script src="js/components/Navigation.js"></script>
+    <script src="js/components/SearchBox.js"></script>
+    <script src="js/components/ContactForm.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+/* Modern Custom Select Styling */
+
+/* Style the native select dropdown when opened */
+select::-webkit-scrollbar {
+    width: 8px;
+}
+
+select::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: var(--radius-md);
+}
+
+select::-webkit-scrollbar-thumb {
+    background: var(--color-primary);
+    border-radius: var(--radius-md);
+}
+
+select::-webkit-scrollbar-thumb:hover {
+    background: var(--color-accent-dark);
+}
+
+/* Firefox */
+select {
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-primary) #f1f1f1;
+}
+
+/* Modern dropdown styling for WebKit browsers */
+select option {
+    padding: 12px 16px !important;
+    margin: 4px 8px !important;
+    border-radius: 8px !important;
+    background-color: var(--color-background) !important;
+    color: var(--color-primary) !important;
+    transition: all 0.2s ease !important;
+}
+
+select option:hover {
+    background-color: rgba(14, 10, 43, 0.08) !important;
+    color: var(--color-primary) !important;
+}
+
+select option:checked {
+    background: linear-gradient(135deg, var(--color-primary) 0%, #1a1544 100%) !important;
+    color: var(--color-background) !important;
+    font-weight: 600 !important;
+}
+
+/* Style the dropdown list container */
+select:focus option {
+    background-color: var(--color-background);
+}
+
+/* Create a more modern look for the dropdown */
+@supports (-webkit-appearance: none) or (-moz-appearance: none) {
+    select {
+        color-scheme: light;
+    }
+    
+    /* For Chromium browsers, try to style the dropdown popup */
+    select::-webkit-dropdown-popover {
+        background-color: var(--color-background);
+        border: 2px solid var(--color-primary);
+        border-radius: 12px;
+        box-shadow: 0 8px 24px rgba(14, 10, 43, 0.2);
+        padding: 8px;
+    }
+}

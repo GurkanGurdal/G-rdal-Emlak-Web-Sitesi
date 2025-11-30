@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Gürdal Emlak - İlan Detayı">
+    <title>İlan Detayı - Gürdal Emlak</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/property-detail.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar container">
+            <div class="navbar__logo">
+                <img src="assets/images/GÜRDAL_TEXT.png" alt="Gürdal Emlak Logo" class="logo">
+            </div>
+            <button class="navbar__toggle" aria-label="Menüyü Aç/Kapat" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="navbar__menu" id="navMenu">
+                <li><a href="index.html#anasayfa" class="navbar__link">Ana Sayfa</a></li>
+                <li><a href="index.html#ilanlar" class="navbar__link active">İlanlar</a></li>
+                <li><a href="index.html#hakkimizda" class="navbar__link">Hakkımızda</a></li>
+                <li><a href="index.html#hizmetler" class="navbar__link">Hizmetlerimiz</a></li>
+                <li><a href="index.html#iletisim" class="navbar__link">İletişim</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Property Detail Section -->
+    <section class="property-detail">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="javascript:history.back()" class="back-button">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M12.5 15L7.5 10L12.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    Geri Dön
+                </a>
+                <a href="index.html">Ana Sayfa</a>
+                <span>/</span>
+                <a href="index.html#ilanlar">İlanlar</a>
+                <span>/</span>
+                <span id="breadcrumbTitle">İlan Detayı</span>
+            </div>
+
+            <div class="detail">
+                <!-- Image Gallery -->
+                <div class="detail__gallery">
+                    <div class="gallery__main">
+                        <img id="mainImage" src="" alt="İlan Görseli" class="gallery__main-image">
+                        <button class="gallery__nav gallery__nav--prev" id="prevImage">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <path d="M15 18L9 12L15 6" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                        <button class="gallery__nav gallery__nav--next" id="nextImage">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <path d="M9 18L15 12L9 6" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="gallery__thumbs" id="galleryThumbs">
+                        <!-- Thumbnails will be loaded dynamically -->
+                    </div>
+                </div>
+
+                <!-- Property Info -->
+                <div class="detail__info">
+                    <div class="detail__header">
+                        <span class="detail__badge" id="propertyBadge">Satılık</span>
+                        <h1 class="detail__title" id="propertyTitle">İlan Başlığı</h1>
+                        <p class="detail__location" id="propertyLocation">
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                <path d="M8 8.5C9.10457 8.5 10 7.60457 10 6.5C10 5.39543 9.10457 4.5 8 4.5C6.89543 4.5 6 5.39543 6 6.5C6 7.60457 6.89543 8.5 8 8.5Z" fill="currentColor"/>
+                                <path d="M8 1C5.23858 1 3 3.23858 3 6C3 9.25 8 15 8 15C8 15 13 9.25 13 6C13 3.23858 10.7614 1 8 1Z" fill="currentColor"/>
+                            </svg>
+                            Konum
+                        </p>
+                    </div>
+
+                    <div class="detail__price" id="propertyPrice">0 ₺</div>
+
+                    <div class="detail__features">
+                        <div class="detail__feature">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M3 10h4v7H3v-7zM9.5 3h7v14h-7V3z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span><strong id="propertyRooms">0</strong> Oda</span>
+                        </div>
+                        <div class="detail__feature">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M9 2v5h2V2H9zM7 8c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm6 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zM3.5 14H2v3h16v-3h-1.5" stroke="currentColor" stroke-width="1.5"/>
+                            </svg>
+                            <span><strong id="propertyBathrooms">0</strong> Banyo</span>
+                        </div>
+                        <div class="detail__feature">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M3 3h14v14H3V3z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M10 3v14M3 10h14" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                            <span><strong id="propertyArea">0</strong> m²</span>
+                        </div>
+                    </div>
+
+                    <div class="detail__description">
+                        <h2>Açıklama</h2>
+                        <p id="propertyDescription">
+                            Bu mükemmel konumdaki gayrimenkul, modern yaşamın tüm konforunu sunmaktadır. 
+                            Geniş ve ferah iç mekanları, yüksek kaliteli malzemelerle döşenmiş odaları ve 
+                            şık tasarımıyla dikkat çekmektedir. Ulaşım imkanlarına yakın, sosyal tesislere 
+                            erişimi kolay bu özel ilan, hayalinizdeki yaşam için mükemmel bir seçenektir.
+                        </p>
+                    </div>
+
+                    <div class="detail__contact">
+                        <h2>İletişim</h2>
+                        <div class="contact-buttons">
+                            <a href="tel:+905555555555" class="contact-btn contact-btn--phone">
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                    <path d="M18 14v3a2 2 0 01-2.18 2A19.79 19.79 0 013 6.18 2 2 0 015 4h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 12.8a16 16 0 006.11 6.11l2.16-2.16a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0118 14z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                Telefon
+                            </a>
+                            <a href="https://wa.me/905555555555" target="_blank" class="contact-btn contact-btn--whatsapp">
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                    <path d="M10 0C4.477 0 0 4.477 0 10c0 1.89.525 3.66 1.438 5.168L0 20l4.988-1.406A9.94 9.94 0 0010 20c5.523 0 10-4.477 10-10S15.523 0 10 0zm5.784 14.176c-.24.675-1.191 1.237-1.95 1.402-.525.112-1.208.201-3.509-.753-2.946-1.22-4.853-4.207-5.001-4.402-.143-.195-1.188-1.582-1.188-3.018 0-1.437.753-2.144 1.02-2.435.267-.291.582-.364.776-.364.194 0 .388.003.558.01.179.008.418-.068.654.498.24.582.825 2.01.897 2.156.072.146.12.316.024.51-.096.196-.145.318-.29.49-.144.17-.303.38-.434.51-.145.145-.296.302-.127.593.169.29.751 1.237 1.611 2.003 1.106 1.003 2.037 1.316 2.327 1.462.29.146.459.122.627-.073.17-.194.726-.848.92-1.139.193-.29.387-.243.653-.146.266.097 1.691.797 1.981.941.29.145.484.218.556.34.072.12.072.678-.17 1.353z" fill="white"/>
+                                </svg>
+                                WhatsApp
+                            </a>
+                            <a href="mailto:info@gurdalemlak.com" class="contact-btn contact-btn--email">
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                    <path d="M3 4h14a1 1 0 011 1v10a1 1 0 01-1 1H3a1 1 0 01-1-1V5a1 1 0 011-1z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M18 5l-8 6-8-6" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                E-posta
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__about">
+                    <img src="assets/images/GÜRDAL.png" alt="Gürdal Emlak Logo" class="footer__logo">
+                    <h3 class="footer__brand">Gürdal Emlak</h3>
+                    <p class="footer__text">
+                        Güvenilir gayrimenkul danışmanlığı ile hayalinizdeki evi bulmanıza yardımcı oluyoruz.
+                    </p>
+                </div>
+                <div class="footer__links">
+                    <h4 class="footer__title">Hızlı Linkler</h4>
+                    <ul>
+                        <li><a href="index.html#anasayfa">Ana Sayfa</a></li>
+                        <li><a href="index.html#ilanlar">İlanlar</a></li>
+                        <li><a href="index.html#hakkimizda">Hakkımızda</a></li>
+                        <li><a href="index.html#hizmetler">Hizmetlerimiz</a></li>
+                        <li><a href="index.html#iletisim">İletişim</a></li>
+                    </ul>
+                </div>
+                <div class="footer__contact">
+                    <h4 class="footer__title">İletişim</h4>
+                    <ul>
+                        <li>📞 +90 555 555 55 55</li>
+                        <li>📧 info@gurdalemlak.com</li>
+                        <li>📍 Antalya / Isparta</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p>&copy; 2025 Gürdal Emlak. Tüm hakları saklıdır.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Fullscreen Image Modal -->
+    <div class="fullscreen-modal" id="fullscreenModal">
+        <button class="fullscreen-modal__close" id="closeFullscreen" aria-label="Kapat">✕</button>
+        <button class="fullscreen-modal__nav fullscreen-modal__nav--prev" id="fullscreenPrevImage" aria-label="Önceki Resim">‹</button>
+        <button class="fullscreen-modal__nav fullscreen-modal__nav--next" id="fullscreenNextImage" aria-label="Sonraki Resim">›</button>
+        <img src="" alt="" class="fullscreen-modal__image" id="fullscreenImage">
+        <div class="fullscreen-modal__hint" id="zoomHint">Resme tıklayın • Fare tekerleğiyle zoom • Sürükleyerek hareket ettirin</div>
+    </div>
+
+    <script src="js/utils/animator.js"></script>
+    <script src="js/components/Navigation.js"></script>
+    <script src="js/services/PropertyService.js"></script>
+    <script src="js/property-detail.js"></script>
+</body>
+</html>
